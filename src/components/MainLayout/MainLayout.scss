@@ -1,0 +1,179 @@
+@import "../../sass/abstracts/mixins";
+.main_layout_wrapper {
+    margin-left: 27.5rem;
+ 
+    padding: 4.8rem;
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--secondary);
+    @include responsive(smartphone-portrait) {
+        margin-left: 0rem !important;
+        padding: 2rem;
+    }
+}
+
+.main_layout_header {
+    &--search {
+        @include responsive(smartphone-portrait) {
+           width: 100%;
+        }
+        form {
+            display: flex;
+            align-items: center;
+            svg {
+                cursor: pointer;
+                width: 3.2rem;
+                height: 3.2rem;
+                color: var(--typo-1);
+            }
+            input[type="text"] {
+                cursor: pointer;
+                color: #ffffff;
+                font-weight: 600;
+                line-height: 4.4rem;
+                background-image: url("../../assets/search.svg");
+                background-position: 15px;
+                background-repeat: no-repeat;
+                width: 5rem;
+                padding: 1.6rem 2rem 1.6rem 5rem;
+                height: 100%;
+                background-color: var(--secondary);
+                border: none;
+                border-radius: 0.8rem;
+                font-size: 1.9rem;
+                transition: width 0.6s ease-in-out;
+                &:focus {
+                    outline: none;
+                    width: 55rem;
+                    background-color: #1a2536;
+                    cursor: text;
+                    &::-webkit-input-placeholder {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: opacity 0.8s, visibility 0.8s;
+                    }
+                    &:-ms-input-placeholder {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: opacity 0.8s, visibility 0.8s;
+                    }
+
+                    &::placeholder {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: opacity 0.8s, visibility 0.8s;
+                    }
+                }
+                &::-webkit-input-placeholder {
+                    /* Edge */
+                    color: #7b828e;
+                    font-size: 1.9rem;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity 0.3s, visibility 0.3s;
+                    @include responsive(smartphone-portrait) {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                &:-ms-input-placeholder {
+                    /* Internet Explorer */
+                    color: #7b828e;
+                    font-size: 1.9rem;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity 0.3s, visibility 0.3s;
+                    @include responsive(smartphone-portrait) {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                &::placeholder {
+                    color: #7b828e;
+                    font-size: 1.9rem;
+                    font-weight: 400;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity 0.3s, visibility 0.3s;
+                    @include responsive(smartphone-portrait) {
+                        opacity: 1;
+                        visibility: visible;
+                        font-size: 1.6rem;
+                    }
+                }
+                @include responsive(smartphone-portrait) {
+                    width: 100%;
+                    background-color: #1a2536;
+                    background-size: 15px 15px;
+                    padding: 1.6rem 1.5rem 1.6rem 3.9rem;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    &--other_icons {
+        display: flex;
+        align-items: center;
+        .light {
+            width: 2.2rem;
+            height: 2.2rem;
+            margin-right: 1rem;
+        }
+        svg {
+            cursor: pointer;
+            width: 3.2rem;
+            height: 3.2rem;
+            color: var(--typo-1);
+        }
+        p{
+            @include responsive(laptop) {
+              display: none;
+            }
+            @include responsive(tablet) {
+                display: none;
+            }
+        }
+        @include responsive(smartphone-portrait) {
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+      
+    }
+    @include responsive(smartphone-portrait) {
+       flex-direction: column-reverse;
+       gap: 25px;
+    }
+}
+
+.main_layout_content {
+    margin-top: 4rem;
+    position: relative;
+    transition-property: padding;
+    transition-duration: 0.6s;
+    &--card_layout {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1.2rem;
+        @include responsive(smartphone-portrait) {
+            margin: 0 -1rem;
+        }
+    }
+    &.shift {
+        padding-top: 41rem;
+    }
+    @include responsive(smartphone-portrait) {
+        margin-top: 2rem;
+    }
+}
+
+.no-result-msg {
+    @include responsive(smartphone-portrait) {
+        margin: 0 1.2rem;
+        h1 {
+            line-height: 2.9rem !important;
+        }
+    }
+}

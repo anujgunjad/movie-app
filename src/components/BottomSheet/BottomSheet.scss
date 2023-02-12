@@ -1,0 +1,103 @@
+.bottom-sheet-wrapper {
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        transition: all 0.2s ease-in-out;
+
+        //     initially it will be hidden
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .bottom-sheet {
+        background-color: var(--secondary);
+        width: 97%;
+        min-height: 57rem;
+        position: fixed !important;
+        z-index: 2;
+        border-radius: 15px;
+        transition: all 0.2s ease-in-out;
+
+        //     centereing an absolute div
+        left: 50%;
+        transform: translateX(-50%);
+
+        //     initially it will be pushed down out of the view.
+        bottom: -110%;
+        opacity: 0;
+        top: auto !important;
+    }
+
+    &.show-modal {
+        .backdrop {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .bottom-sheet {
+            bottom: 5px;
+            opacity: 1;
+        }
+    }
+}
+
+.close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    float: right;
+    z-index: 2;
+    margin: 22px 10px 10px 10px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--typo-1);
+        transform: rotate(45deg);
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--typo-1);
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.large_card--img-btms {
+    width: 100%;
+ 
+    padding: 15px;
+    img {
+        width: 100%;
+        border-radius: 14px;
+        height: 30vh;
+    }
+}
+
+.large_card--content-btms {
+    padding: 0px 15px 15px 15px;
+    bottom: 20px;
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.flexG1 {
+    flex-grow: 1;
+}

@@ -1,0 +1,51 @@
+@import "../../../sass/abstracts/mixins";
+.card-wrp {
+    width: 20%;
+    padding: 12px;
+    cursor: pointer;
+    .card {
+        border-radius: 11px;
+        background-color: #394b61;
+        padding: 1rem;
+
+        &--image_wrp {
+            width: auto;
+            height: 18.8rem;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 11px;
+            }
+        }
+        .card--content {
+            p {
+                white-space: nowrap;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &-icons {
+                svg {
+                    width: 2.3rem;
+                    height: 2.3rem;
+                    color: var(--typo-1);
+                    &:first-child {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        &.selected {
+            border: 3px solid #00E0FF;
+        }
+    }
+    @include responsive(smartphone-portrait){
+        width: 50% !important;
+    }
+    @include responsive(smartphone-landscape){
+        width: 33.3% !important;
+    }
+    @include responsive(tablet ) {
+        width: 25% !important;
+    }
+}

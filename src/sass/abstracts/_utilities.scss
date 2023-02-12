@@ -1,0 +1,48 @@
+.fw400 {
+    font-weight: 400;
+}
+.fw600 {
+    font-weight: 600;
+}
+.fw700 {
+    font-weight: 700;
+}
+
+.light-color {
+    color: var(--typo-1);
+}
+
+.white-color {
+    color: #ffffff;;
+}
+
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-space-bt {
+    justify-content: space-between;
+}
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noSelect:focus {
+    outline: none !important;
+}
+
+.noTouch {
+    pointer-events: none;
+    overflow: hidden;
+}

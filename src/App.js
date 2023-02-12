@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from 'react';
+import './App.scss';
+import Sidebar from './components/Sidebar/Sidebar';
+import MainLayout from './components/MainLayout/MainLayout';
 function App() {
+  let [openSideDrawer, setOpenSideDrawer] = useState(false);
+  function handleSideDrawer() {
+    setOpenSideDrawer((prevState) => {
+      return prevState ? false : true;
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar isSideDrawer={openSideDrawer} handleSideDrawer={handleSideDrawer}/>
+      <MainLayout isSideDrawer={openSideDrawer} handleSideDrawer={handleSideDrawer}/>
+      {openSideDrawer && (
+        <div className="backdrop-side open" onClick={handleSideDrawer}></div>
+      )}
     </div>
   );
 }

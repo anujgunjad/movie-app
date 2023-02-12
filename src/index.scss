@@ -1,0 +1,28 @@
+@import "./sass/abstracts/variables";
+@import "./sass/abstracts/utilities";
+@import "./sass/abstracts/mixins";
+@import "./sass/base/reset";
+@import "./sass/base/typo";
+
+/* width */
+::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #273244; 
+   
+    background: #273244;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #394B61; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #394B61; 
+  }

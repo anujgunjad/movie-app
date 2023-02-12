@@ -1,0 +1,117 @@
+@function pxToRem($pxSize) {
+    @return $pxSize / 10 + rem;
+}
+@mixin font-size() {
+    @for $size from 12 through 64 {
+        .font-#{$size} {
+            font-size: pxToRem($size);
+        }
+    }
+}
+
+@include font-size();
+
+$zindexVal: 7;
+@mixin zindexMixin {
+    @for $zindexNum from 0 through $zindexVal {
+        .zi#{$zindexNum} {
+            z-index: $zindexNum !important;
+        }
+    }
+}
+
+@include zindexMixin;
+
+/* Global special Margin classes starts*/
+$smarVal: 100;
+@mixin smarginMixin {
+    @for $smarNum from 0 through $smarVal {
+        .smtop#{$smarNum} {
+            margin-top: pxToRem($smarNum) !important;
+        }
+        .smright#{$smarNum} {
+            margin-right: pxToRem($smarNum) !important;
+        }
+        .smbottom#{$smarNum} {
+            margin-bottom: pxToRem($smarNum) !important;
+        }
+        .smleft#{$smarNum} {
+            margin-left: pxToRem($smarNum) !important;
+        }
+        .small#{$smarNum} {
+            margin: pxToRem($smarNum) !important;
+        }
+    }
+}
+/* Global special Margin classes ends*/
+@include smarginMixin;
+
+/* Global special Padding classes starts*/
+
+@mixin spaddingMixin {
+    @for $smarNum from 0 through $smarVal {
+        .sptop#{$smarNum} {
+            padding-top: pxToRem($smarNum) !important;
+        }
+        .spright#{$smarNum} {
+            padding-right: pxToRem($smarNum) !important;
+        }
+        .spbottom#{$smarNum} {
+            padding-bottom: pxToRem($smarNum) !important;
+        }
+        .spleft#{$smarNum} {
+            padding-left: pxToRem($smarNum) !important;
+        }
+        .spall#{$smarNum} {
+            padding: pxToRem($smarNum) !important;
+        }
+    }
+}
+
+@include spaddingMixin;
+
+/* Global Line height classes starts*/
+$lineHtVal: 100;
+@mixin linehtMixin {
+    @for $lineHtNum from 10 through $lineHtVal {
+        .ln#{$lineHtNum} {
+            line-height: pxToRem($lineHtNum) !important;
+        }
+    }
+}
+/* Global Line height classes ends*/
+@include linehtMixin;
+
+@mixin responsive( $breakpoint ) {
+    /*
+        breakpoints are viewport arbitrary values,
+        they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+        the breakpoints I used were inspired by Bootstrap =>
+        https://getbootstrap.com/docs/5.0/layout/breakpoints/
+    */
+    @if $breakpoint == smartphone-portrait {
+        @media only screen and ( max-width: 575.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == smartphone-landscape {
+        @media only screen and ( min-width: 575.99px ) and ( max-width: 767.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media only screen and ( min-width: 767.99px ) and ( max-width: 1199.97px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == laptop {
+        @media only screen and ( min-width: 1199.98px  ) and ( max-width: 1399.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and ( min-width: 1399.99px ) {
+            @content;
+        }
+    }
+}
