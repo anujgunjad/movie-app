@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import ProgressBar from '../utilities/ProgressBar/ProgressBar';
 
 function BottomSheet(props) {
-    console.log(props.isBottomSheet);
+  
     function handleChange(event) {
         // Here, we invoke the callback with the new value
         props.closeBS();
