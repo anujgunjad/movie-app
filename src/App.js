@@ -5,9 +5,11 @@ import MainLayout from './components/MainLayout/MainLayout';
 function App() {
   let [openSideDrawer, setOpenSideDrawer] = useState(false);
   function handleSideDrawer() {
+if (window.innerWidth < 786) {
     setOpenSideDrawer((prevState) => {
       return prevState ? false : true;
     });
+}
   }
 
   return (
