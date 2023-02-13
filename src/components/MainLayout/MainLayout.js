@@ -556,10 +556,10 @@ function MainLayout(props) {
                             <input type="text" name="search" placeholder="Title, Movies, Keyword" onChange={(e) => searchItems(e.target.value)} />
                         </form>
                     </div>
-                    <div className='main_layout_header--other_icons' onClick={props.handleSideDrawer}>
+                    <div className='main_layout_header--other_icons' >
                         <LightModeOutlinedIcon className='light ' />
                         <p className='font-18 fw700 light-color'>Movie App</p>
-                        <MoreVertIcon className='noSelect' />
+                        <MoreVertIcon className='noSelect' onClick={props.handleSideDrawer}/>
                     </div>
                 </div>
             </header>
